@@ -81,7 +81,7 @@ router.put('/:id', async (req, res, next) => {
     const { id: todoID } = req.params
     const { text, status } = req.body
 
-    if (!text && status) {
+    if (!text || status) {
         return res.status(400).json({
             success: false,
             statusCode: 400,
